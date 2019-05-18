@@ -9,29 +9,12 @@
         <title>JSP Page</title>
     </head>
     <body>
-        <h1>Homepage</h1>
+        <h1>HOMEPAGE</h1>
         <ul>
         	<li><a href="/appwebcrud/ServletInsert">Insert</a></li>
         	<li><a href="/appwebcrud/ServletRead">Read</a></li>
-        </ul>
+        </ul>        
         
-        <%
-                	Conn myConnection = new Conn();
-                        
-                        if(myConnection.getConnection() != null){
-                %>
-        	<b>The connection was a success</b>
-        	<%
-        }
-        
-        myConnection.closeConnection();
-        
-        if(myConnection.getConnection() == null){
-        	%>
-        	<b>The connection was finalized</b>
-        	<%
-        }
-        %>
         
     </body>
 </html>
