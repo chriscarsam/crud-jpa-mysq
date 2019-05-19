@@ -1,11 +1,14 @@
 package com.sambcode.app.servlet;
 
 import java.io.IOException;
+import java.sql.PreparedStatement;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+
+import com.sambcode.app.appwebcrud.Conn;
 
 /**
  * Servlet implementation class ServletDelete
@@ -27,7 +30,27 @@ public class ServletDelete extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		request.getRequestDispatcher("delete.jsp").forward(request, response);
+		Conn connection = new Conn();
+
+		try {
+			String sql = "DELETE FROM tperson WHERE id=?";
+
+			PreparedStatement prepareStatement = connection.getConnection().prepareStatement(sql);
+
+			prepareStatement.setString(1, request.getParameter("id"));
+
+			prepareStatement.execute();
+
+			prepareStatement.close();
+
+			request.getRequestDispatcher("delete.jsp").forward(request, response);
+
+		} catch (Exception e) {
+			System.out.println(e.getMessage());
+		} finally {
+			connection.closeConnection();
+		}
+
 	}
 
 	/**

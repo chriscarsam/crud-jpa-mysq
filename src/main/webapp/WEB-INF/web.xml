@@ -32,9 +32,9 @@
     <servlet>
     	<description>
     	</description>
-    	<display-name>ServletUpadate</display-name>
-    	<servlet-name>ServletUpadate</servlet-name>
-    	<servlet-class>com.sambcode.app.servlet.ServletUpadate</servlet-class>
+    	<display-name>ServletUpdate</display-name>
+    	<servlet-name>ServletUpdate</servlet-name>
+    	<servlet-class>com.sambcode.app.servlet.ServletUpdate</servlet-class>
     </servlet>
     <servlet-mapping>
     	<servlet-name>ServletIndex</servlet-name>
@@ -53,8 +53,8 @@
     	<url-pattern>/ServletRead</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
-    	<servlet-name>ServletUpadate</servlet-name>
-    	<url-pattern>/ServletUpadate</url-pattern>
+    	<servlet-name>ServletUpdate</servlet-name>
+    	<url-pattern>/ServletUpdate</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

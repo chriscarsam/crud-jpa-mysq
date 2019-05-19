@@ -7,7 +7,7 @@
 <title>Delete</title>
 </head>
 <body>
-	<h1>Delete</h1>
+	<h1>The person was eliminated</h1>
 	<ul>
 	<li><a href="/appwebcrud/ServletIndex">Go to home</a></li>
 	</ul>

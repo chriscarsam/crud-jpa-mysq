@@ -23,6 +23,8 @@
 			<th>BIRTHDATE</th>
 			<th>REGISTRATION DATE</th>
 			<th>UPDATE DATE</th>
+			<th></th>
+			<th></th>
 			</tr>
 		</thead>
 		<tbody>
@@ -35,11 +37,21 @@
 					<td><c:out value="${item.getBirthdate()}" ></c:out></td>
 					<td><c:out value="${item.getRegistrationDate()}" ></c:out></td>
 					<td><c:out value="${item.getUpdateDate()}" ></c:out></td>
-					
+					<td><input type="button" value="Delete" onclick="dele('${item.getId()}')"></td>
+					<td><input type="button" value="Edit" onclick="edit('${item.getId()}')"></td>
 				</tr>
 			</c:forEach>
 		</tbody>
 	</table>
 
 </body>
+<script>
+	function dele(id) {
+		window.location.href="/appwebcrud/ServletDelete?id="+id;
+	}
+
+	function edit(id) {
+		window.location.href="/appwebcrud/ServletUpdate?id="+id;
+	}
+</script>
 </html>
