@@ -4,6 +4,7 @@ import java.sql.Date;
 
 public class Person {
 
+	private Integer id;
 	private String firstName;
 	private String lastName;
 	private String documentIdentification;
@@ -14,6 +15,14 @@ public class Person {
 
 	public Person() {
 
+	}
+
+	public Integer getId() {
+		return id;
+	}
+
+	public void setId(Integer id) {
+		this.id = id;
 	}
 
 	public String getFirstName() {
